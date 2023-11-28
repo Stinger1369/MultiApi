@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from './pages/NavBar/NavBar';
 import Weather from './components/Weather/Weather';
-import GoogleMap from './components/GoogleMap/GoogleMap';
+import GoogleMap from './components/GoogleApp/GoogleApp';
 import './App.css'; 
 
 

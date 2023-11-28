@@ -11,7 +11,7 @@ const center = {
   lng: -38.523
 };
 
-function MyComponent() {
+function GoogleApp() {
   return (
     <LoadScript
       googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
@@ -26,4 +26,4 @@ function MyComponent() {
   )
 }
 
-export default MyComponent;
+export default GoogleApp;
