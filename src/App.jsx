@@ -18,6 +18,5 @@ function App() {
     </div>
   );
 }
-// import React from 'react';
 export default App;
 
