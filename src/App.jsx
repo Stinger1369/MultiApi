@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import NavBar from './pages/NavBar';
-import Weather from './components/Weather';
+import NavBar from './pages/NavBar/NavBar';
+import Weather from './components/Weather/Weather';
 import './App.css'; 
 
 
