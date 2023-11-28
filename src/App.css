@@ -1,42 +1,28 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 20px auto; /* Ajout d'une marge autour du cadre pour ne pas coller aux bords de l'écran */
   padding: 2rem;
   text-align: center;
+  border-radius: 20px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Ombre extérieure */
+              0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée pour donner de la profondeur */
+  overflow: hidden; /* Assure que tout le contenu interne est contenu dans les coins arrondis */
+  background: white; /* Fond blanc pour le cadre, remplacez par une couleur de votre choix */
 }
 
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+/* Le reste de votre CSS pour .logo et animations */
 
 .card {
   padding: 2em;
+  background: #f0f0f0; /* Fond de la carte, ajustez la couleur selon vos besoins */
+  border-radius: 10px; /* Coins arrondis pour la carte */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce pour la carte */
+  margin-bottom: 1em; /* Espace entre les cartes */
 }
 
-.read-the-docs {
-  color: #888;
-}
+/* Le reste de votre CSS */

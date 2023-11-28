@@ -1,0 +1,26 @@
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Espace entre les images */
+    padding: 1rem; /* Espace autour de la galerie */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante si nécessaire */
+    margin-top: 2rem; /* Espace au-dessus de la galerie */
+    background-color: #f8f8f8; /* Couleur de fond pour la galerie */
+    border-radius: 10px; /* Coins arrondis pour la galerie */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour la galerie */
+  }
+  
+  .image-gallery img {
+    width: calc(33.333% - 1rem); /* Trois images par ligne avec un espace de 1rem entre elles */
+    height: auto; /* Hauteur automatique pour conserver l'aspect ratio */
+    border-radius: 5px; /* Coins arrondis pour les images */
+    transition: transform 0.3s ease-in-out; /* Animation pour le survol */
+  }
+  
+  .image-gallery img:hover {
+    transform: scale(1.05); /* Agrandir légèrement l'image au survol */
+    cursor: pointer; /* Changer le curseur au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+  }
+  

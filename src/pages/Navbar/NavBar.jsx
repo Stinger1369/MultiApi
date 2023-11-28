@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './NavBar.css';
 
 function NavBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -14,6 +15,7 @@ function NavBar({ onSearch }) {
   return (
     <nav className="navbar">
       <div className="logo">Weather App</div>
+
       <input
         type="text"
         placeholder="Rechercher une ville..."
