@@ -7,7 +7,9 @@ function Weather({ city }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3c9db6247fc0db3f67e8a1f56ae53258&units=metric`);
+        const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        const response = await fetch(url);
         if (!response.ok) throw new Error('Ville non trouvée');
         const data = await response.json();
         setWeatherData(data);
