@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavBar from './pages/NavBar/NavBar';
+import NavBar from './pages/Navbar/NavBar';
 import Weather from './components/Weather/Weather';
 import GoogleApp from './components/GoogleApp/GoogleApp';
 import UnsplashImages from './components/Unsplash/Unsplash';
