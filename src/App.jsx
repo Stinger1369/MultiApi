@@ -24,17 +24,14 @@ function App() {
       <div className="content">
         {city && (
           <>
-            <div className="c-item"></div>
             <Population title={`Population de ${city}`} city={city} />
             <GoogleApp center={center} />
-            <div className="c-item"></div>
             <div className="c-item"></div>
           </>
         )}
       </div>
       {city && (
         <>
-          
           <UnsplashImages searchTerm={city} />
         </>
       )}
