@@ -5,30 +5,56 @@ $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
 
 .navbar {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px; /* Réduction du padding pour diminuer la hauteur */
-  background-color: #f8f8f8;
+  padding: 0.5em 1em;
+  background-color: #e5dcdc;
   box-shadow: $shadow;
-  margin: 0;
+  border-bottom-left-radius: $b-radius;
+  border-bottom-right-radius: $b-radius;
 }
 
 .navbar .logo {
-  font-size: 20px; /* Réduire légèrement la taille de la police si nécessaire */
+  font-size: 20px;
   font-weight: bold;
+  font-style: italic;
   color: #333;
+  font-family: 'Dancing Script', cursive;
+}
+
+.navbar .nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav a:hover {
+  color: #007bff;
+}
+
+.navbar .search {
+  display: flex;
+  align-items: center;
+  margin-left: 2em;
 }
 
 .navbar input[type="text"] {
-  padding: 5px; /* Réduction du padding pour diminuer la hauteur du champ de saisie */
+  padding: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 200px; /* Ajustez la largeur si nécessaire */
+  width: 200px;
   margin-right: 10px;
 }
 
 .navbar button {
-  padding: 5px 12px; /* Réduction du padding pour diminuer la hauteur du bouton */
+  padding: 5px 12px;
   background-color: #007bff;
   color: white;
   border: none;

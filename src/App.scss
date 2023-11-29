@@ -3,7 +3,6 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 $b: 1px solid #ddd;
 $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
 
-
 .App {
   .content {
     display: flex;
@@ -18,4 +17,3 @@ $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
     box-shadow: $shadow;
   }
 }
-

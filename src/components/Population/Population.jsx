@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Population.css';
+import './Population.scss';
 
 function Population({ title, city }) {
     const [communes, setCommunes] = useState([]);
@@ -25,7 +25,7 @@ function Population({ title, city }) {
     return (
       <div className="c-item population">
         <div className="title">
-        <h2>{title}</h2>
+          <h2>{title}</h2>
         </div>
         
         <div className="communes-list">
@@ -34,8 +34,7 @@ function Population({ title, city }) {
               <h3>{commune.nom}</h3>
               <p>Code: {commune.code}</p>
               <p>Département: {commune.codeDepartement}</p>
-              <p>Population: {commune.population}</p>
-              
+              <p>Population: {commune.population}</p>   
             </div>
           ))}
         </div>
