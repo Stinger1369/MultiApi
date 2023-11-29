@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NavBar.css';
+import './NavBar.scss';
 
 function NavBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');

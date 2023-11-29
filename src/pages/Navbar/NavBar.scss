@@ -1,10 +1,16 @@
+$b-radius: 10px;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$b: 1px solid #ddd;
+$bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px; /* Réduction du padding pour diminuer la hauteur */
   background-color: #f8f8f8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow;
+  margin: 0;
 }
 
 .navbar .logo {

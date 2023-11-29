@@ -2,43 +2,22 @@ $b-radius: 10px;
 $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 $b: 1px solid #ddd;
 $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
- 
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
-      
- .App {
-  .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 450px;
-    margin: 3em 0;
-    padding: 2em 1em;
-    background-image: url('../../assets/images/sun.jpg');
-    border-radius: $b-radius;
-    box-shadow: $shadow;
-
-    .c-item {
-      width: 15%;
-      height: 95%;
-      border: $b;
-      background-color: $bg-color;
+       
+.c-item {
+  width: 15%;
+  height: 95%;
+  border: $b;
+  background-color: $bg-color;
+  border-radius: $b-radius;
+  box-shadow: $shadow;
+  &.google-map-container {
+    width: 35%;
+    .map {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       border-radius: $b-radius;
-      box-shadow: $shadow;
-      &.google-map-container {
-        width: 35%;
-        .map {
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          border-radius: $b-radius;
-        }
-      }
     }
   }
- }
+}
+

@@ -5,7 +5,7 @@ import GoogleApp from './components/GoogleApp/GoogleApp';
 import UnsplashImages from './components/Unsplash/Unsplash';
 import  getCoordinatesForCity  from './components/GoogleApp/getCoordinatesForCity';
 import Population from './components/Population/Population';  
-import './App.css'; 
+import './App.scss'; 
 
 function App() {
   const [city, setCity] = useState('paris'); // Commencez avec une ville vide
