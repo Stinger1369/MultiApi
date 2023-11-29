@@ -2,7 +2,9 @@ import React from 'react';
 
 async function getCoordinatesForCity(city) {
   const apikey = "sSbI019VmZZrIx5w0xXKyq0VDS94JHFD";
-  const url = `https://api.apilayer.com/geo/city/name/${city}`;
+  const encodedCity = encodeURIComponent(city); // Ensure the city name is URL-friendly
+  const url = `https://api.apilayer.com/geo/city/name/${encodedCity}`;
+
 
   try {
     const response = await fetch(url, {
@@ -13,7 +15,10 @@ async function getCoordinatesForCity(city) {
     });
     const data = await response.json();
 
-    // Utiliser les coordonnées de la première entrée de la liste
+    // Log the response for debugging
+    console.log(data);
+
+    // Use the coordinates of the first entry in the list
     const firstEntry = data[0];
     return {
       lat: firstEntry.latitude,
@@ -21,7 +26,7 @@ async function getCoordinatesForCity(city) {
     };
   } catch (error) {
     console.error('Erreur lors de la récupération des coordonnées:', error);
-    return null; // Retourner null en cas d'erreur
+    return null; // Return null in case of an error
   }
 }
 export default getCoordinatesForCity;
