@@ -1,0 +1,31 @@
+$b-radius: 10px;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$b: 1px solid #ddd;
+$bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
+       
+.image-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  padding: 2em 1em;
+  border: $b;
+  background-color: $bg-color;
+  border-radius: $b-radius;
+  box-shadow: $shadow;
+  background-image: url('../../assets/images/sun.jpg');
+
+  img {
+    height: 100%;
+    width: calc(33.333% - 1rem);
+    border-radius: $b-radius;
+    box-shadow: $shadow;
+    transition: transform 0.3s ease-in-out; /* Animation pour le survol */
+    &:hover {
+      transform: scale(1.05); /* Agrandir légèrement l'image au survol */
+      cursor: pointer; /* Changer le curseur au survol */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+    }
+  }
+}
