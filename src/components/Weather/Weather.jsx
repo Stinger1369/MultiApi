@@ -19,6 +19,7 @@ function Weather({ city }) {
         if (!response.ok) throw new Error('Ville non trouvée');
         const data = await response.json();
         setWeatherData(data);
+        console.log(data);
         setError(null);
 
         switch (data.weather[0].main) {
@@ -28,7 +29,7 @@ function Weather({ city }) {
           case 'Rain':
             setBackgroundImage(Rain);
             break;
-          case 'Snow':
+          case 'Clouds':
             setBackgroundImage(Snow);
             break;
           case 'Wind':
