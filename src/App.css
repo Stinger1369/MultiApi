@@ -1,5 +1,6 @@
 #root {
-  max-width: 1000px;
+  max-width: 1200px;
+  max-height: 100vh;
   margin: 20px auto; /* Ajout d'une marge autour du cadre pour ne pas coller aux bords de l'écran */
   padding: 2rem;
   text-align: center;
