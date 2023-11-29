@@ -1,18 +1,14 @@
 import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import Population from '../Population/Population'; 
-import './GoogleApp.css';
+import './GoogleApp.scss';
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '100%',
+  height: '100%'
 };
 
 function GoogleApp({ center }) {
   return (
-    <div className="google-map-container">
-      <div className="right">
-      <Population title="Population Gauche" /> {/* Composant Population à gauche */}
-      </div>
+    <div className="c-item google-map-container">
       <div className="map">
       <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
         <GoogleMap
@@ -22,10 +18,6 @@ function GoogleApp({ center }) {
         >
         </GoogleMap>
       </LoadScript>
-      </div>
-     
-      <div className="left">
-      <Population title="Population Droite" /> {/* Composant Population à droite */}
       </div>
     </div>
   )

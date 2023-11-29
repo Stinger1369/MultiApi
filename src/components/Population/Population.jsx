@@ -21,8 +21,9 @@ function Population({ title, city }) {
         fetchCommunes();
       }
     }, [city]);
+    
     return (
-      <div className="population">
+      <div className="c-item population">
         <h2>{title}</h2>
         <div className="communes-list">
           {communes.map((commune, index) => (

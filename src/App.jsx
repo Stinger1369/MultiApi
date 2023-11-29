@@ -24,9 +24,11 @@ function App() {
       <div className="content">
         {city && (
           <>
-            <Population title={`Population de ${city} (Gauche)`} city={city} />
+            <div className="c-item"></div>
+            <Population title={`Population de ${city}`} city={city} />
             <GoogleApp center={center} />
-            <Population title={`Population de ${city} (Droite)`} city={city} />
+            <div className="c-item"></div>
+            <div className="c-item"></div>
           </>
         )}
       </div>
