@@ -24,7 +24,10 @@ function Population({ title, city }) {
     
     return (
       <div className="c-item population">
+        <div className="title">
         <h2>{title}</h2>
+        </div>
+        
         <div className="communes-list">
           {communes.map((commune, index) => (
             <div key={index} className="commune">
@@ -32,7 +35,7 @@ function Population({ title, city }) {
               <p>Code: {commune.code}</p>
               <p>Département: {commune.codeDepartement}</p>
               <p>Population: {commune.population}</p>
-
+              
             </div>
           ))}
         </div>

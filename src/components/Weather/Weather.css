@@ -36,3 +36,8 @@
     margin: 20px 0;
     width: 25%;
 }
+.weather-icon {
+    width: 100px; /* Largeur de l'icône */
+    height: 100px; /* Hauteur de l'icône */
+  }
+  
