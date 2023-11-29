@@ -1,5 +1,7 @@
 $b-radius: 10px;
 $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$b: 1px solid #ddd;
+$bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
  
  * {
     margin: 0;
@@ -24,8 +26,8 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     .c-item {
       width: 15%;
       height: 95%;
-      border: 1px solid #ddd;
-      background-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
+      border: $b;
+      background-color: $bg-color;
       border-radius: $b-radius;
       box-shadow: $shadow;
       &.google-map-container {
