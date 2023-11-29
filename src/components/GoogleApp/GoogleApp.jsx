@@ -1,26 +1,37 @@
-import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import React, { useEffect, useRef } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import './GoogleApp.scss';
-const containerStyle = {
-  width: '100%',
-  height: '100%'
-};
 
-function GoogleApp({ center }) {
+function MapApp({ center }) {
+  const mapContainerRef = useRef(null);
+
+  // Coordonnées par défaut pour Paris
+  const defaultCoords = { lat: 48.8566, lng: 2.3522 };
+
+  useEffect(() => {
+    // Utiliser les coordonnées fournies ou les coordonnées par défaut si non fournies
+    const coords = center || defaultCoords;
+
+    // Créer une nouvelle carte Leaflet
+    const map = L.map(mapContainerRef.current).setView([coords.lat, coords.lng], 10);
+
+    // Ajouter un fond de carte OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Nettoyage lors de la désactivation du composant
+    return () => {
+      map.remove();
+    };
+  }, [center]); // Se déclenche lorsque les coordonnées 'center' changent
+
   return (
-    <div className="c-item google-map-container">
-      <div className="map">
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={10}
-        >
-        </GoogleMap>
-      </LoadScript>
-      </div>
+    <div className="c-item map-container">
+      <div ref={mapContainerRef} className="map" />
     </div>
-  )
+  );
 }
 
-export default GoogleApp;
+export default MapApp;

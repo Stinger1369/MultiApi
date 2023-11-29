@@ -1,14 +1,17 @@
 #root {
-  max-width: 1200px;
-  max-height: 100vh;
-  margin: 20px auto; /* Ajout d'une marge autour du cadre pour ne pas coller aux bords de l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ajustez en fonction de vos besoins */
+  align-items: center;
+  max-width: 1100px;
+  max-height: 120vh;
+  margin: 20px auto;
   padding: 2rem;
   text-align: center;
-  border-radius: 20px; /* Coins arrondis */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Ombre extérieure */
-              0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée pour donner de la profondeur */
-  overflow: hidden; /* Assure que tout le contenu interne est contenu dans les coins arrondis */
-  background: white; /* Fond blanc pour le cadre, remplacez par une couleur de votre choix */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: white;
 }
 
 .logo {
@@ -27,3 +30,10 @@
 }
 
 /* Le reste de votre CSS */
+.content {
+  display: flex;
+  flex-direction: row; /* Ou column, selon le layout souhaité */
+  justify-content: center;
+  align-items: center;
+  /* Ajoutez d'autres styles si nécessaire */
+}
