@@ -1,43 +1,20 @@
-/* .content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+// Déclaration des variables
+$b-radius: 10px;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$b: 1px solid #ddd;
+$bg-color: rgba(249, 249, 249, 0.5); // Semi-transparent
+$p: 1em;
 
-.population h1 {
-    color: black;
-  }
-  .population h2 {
-    color: black;
-  }
-  .population {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .commune {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
+.population {
+  // border: 1px solid red;
+  padding: 0.5em;
+  color: #ffffff;
+  font-family: 'Dancing Script', cursive;
   .communes-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: $p;
+    margin-top: $p;
+    background-color: rgb(159 197 197 / 41%);
+    border-radius: $b-radius;
+    box-shadow: $shadow;
   }
-  
-  .commune h3 {
-    margin: 0;
-    color: #333;
-    font-size: 1.2rem;
-  }
-  
-  .commune p {
-    margin: 5px 0;
-    color: #666;
-  }
-   */
+}
