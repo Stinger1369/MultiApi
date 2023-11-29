@@ -11,7 +11,7 @@ import Contact from './pages/Contact/Contact';
 import './App.css';
 
 function App() {
-  const [city, setCity] = useState('paris'); 
+  const [city, setCity] = useState('tunis'); 
   const [center, setCenter] = useState(null); 
 
   const handleSearch = async (term) => {

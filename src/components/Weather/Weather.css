@@ -1,6 +1,6 @@
 .weather {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding: 15px;
     margin: 20px 0;
@@ -21,7 +21,7 @@
 
 .weather p {
     margin: 10px 0;
-    color: #666;
+   
     font-size: 18px;
 }
 .ville, .temp, .info {
@@ -40,4 +40,15 @@
     width: 100px; /* Largeur de l'icône */
     height: 100px; /* Hauteur de l'icône */
   }
-  
+.firstBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.weekly-forecast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}

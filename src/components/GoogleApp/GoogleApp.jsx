@@ -1,31 +1,37 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './GoogleApp.scss';
 
-function MapApp({ center }) {
+function MapApp({ city }) {
   const mapContainerRef = useRef(null);
-
-  // Coordonnées par défaut pour Paris
-  const defaultCoords = { lat: 48.8566, lng: 2.3522 };
+  const [coords, setCoords] = useState({ lat: 48.8566, lng: 2.3522 }); // Paris par défaut
 
   useEffect(() => {
-    // Utiliser les coordonnées fournies ou les coordonnées par défaut si non fournies
-    const coords = center || defaultCoords;
+    const fetchCoords = async () => {
+      try {
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?city=${city}&format=json`);
+        if (!response.ok) throw new Error('Erreur lors de la récupération des coordonnées');
+        const data = await response.json();
+        if (data.length === 0) throw new Error('Ville non trouvée');
+        setCoords({ lat: data[0].lat, lng: data[0].lon });
+      } catch (error) {
+        console.error('Erreur :', error);
+      }
+    };
 
-    // Créer une nouvelle carte Leaflet
+    if (city) {
+      fetchCoords();
+    }
+  }, [city]);
+
+  useEffect(() => {
     const map = L.map(mapContainerRef.current).setView([coords.lat, coords.lng], 10);
-
-    // Ajouter un fond de carte OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-
-    // Nettoyage lors de la désactivation du composant
-    return () => {
-      map.remove();
-    };
-  }, [center]); // Se déclenche lorsque les coordonnées 'center' changent
+    return () => map.remove();
+  }, [coords]);
 
   return (
     <div className="c-item map-container">
