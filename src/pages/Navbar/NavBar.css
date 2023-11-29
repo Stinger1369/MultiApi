@@ -1,37 +1,36 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .navbar input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 200px;
-    margin-right: 10px;
-  }
-  
-  .navbar button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .navbar button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px; /* Réduction du padding pour diminuer la hauteur */
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-size: 20px; /* Réduire légèrement la taille de la police si nécessaire */
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar input[type="text"] {
+  padding: 5px; /* Réduction du padding pour diminuer la hauteur du champ de saisie */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px; /* Ajustez la largeur si nécessaire */
+  margin-right: 10px;
+}
+
+.navbar button {
+  padding: 5px 12px; /* Réduction du padding pour diminuer la hauteur du bouton */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #0056b3;
+}

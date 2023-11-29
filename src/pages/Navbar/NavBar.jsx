@@ -15,7 +15,7 @@ function NavBar({ onSearch }) {
   return (
     <nav className="navbar">
       <div className="logo">Weather App</div>
-
+      <div className="nav">
       <input
         type="text"
         placeholder="Rechercher une ville..."
@@ -23,6 +23,8 @@ function NavBar({ onSearch }) {
         onChange={handleSearchChange}
       />
       <button onClick={handleSearch}>Recherche</button>
+      </div>
+     
     </nav>
   );
 }

@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 20px auto; /* Ajout d'une marge autour du cadre pour ne pas coller aux bords de l'écran */
   padding: 2rem;
   text-align: center;
@@ -11,8 +11,8 @@
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  /* height: 6em;
+  padding: 1.5em; */
 }
 
 /* Le reste de votre CSS pour .logo et animations */

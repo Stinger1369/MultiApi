@@ -7,8 +7,8 @@ import  getCoordinatesForCity  from './components/GoogleApp/getCoordinatesForCit
 import './App.css'; 
 
 function App() {
-  const [city, setCity] = useState('Paris'); // Ville par défaut
-  const [searchTerm, setSearchTerm] = useState('');
+  const [city, setCity] = useState('Paris'); 
+  const [searchTerm, setSearchTerm] = useState('Paris');
   const [center, setCenter] = useState({ lat: 48.8566, lng: 2.3522 }); // Coordonnées de Paris
 
   const handleSearch = async (term) => {
