@@ -1,13 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import './Population.css';
 
-function Population({ title }) {
+function Population({ title, city }) {
+    const [communes, setCommunes] = useState([]);
+  
+    useEffect(() => {
+      const fetchCommunes = async () => {
+        try {
+          const response = await fetch(`https://geo.api.gouv.fr/communes?nom=${city}`);
+          const data = await response.json();
+          // Filtrer les données pour ne garder que celles correspondant exactement à la ville recherchée
+          const filteredData = data.filter(commune => commune.nom.toLowerCase() === city.toLowerCase());
+          setCommunes(filteredData);
+        } catch (error) {
+          console.error('Erreur lors de la récupération des communes:', error);
+        }
+      };
+  
+      if (city) {
+        fetchCommunes();
+      }
+    }, [city]);
     return (
       <div className="population">
         <h2>{title}</h2>
-        <h1>c'est moi</h1>
+        <div className="communes-list">
+          {communes.map((commune, index) => (
+            <div key={index} className="commune">
+              <h3>{commune.nom}</h3>
+              <p>Code: {commune.code}</p>
+              <p>Département: {commune.codeDepartement}</p>
+              <p>Population: {commune.population}</p>
+
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
   
-    export default Population;
+  export default Population;
+  
+
+

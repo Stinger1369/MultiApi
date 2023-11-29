@@ -1,9 +1,17 @@
 .google-map-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px;
+    justify-content: space-around; /* Répartit les éléments uniformément avec de l'espace autour */
+    align-items: center; /* Aligner les éléments verticalement au centre */
   }
+  
+  .right, .left {
+    flex: 1; /* Les divs de population prennent de l'espace équitablement */
+  }
+  
+  .map {
+    flex: 2; /* La carte prend plus d'espace */
+  }
+  
  
 
       
