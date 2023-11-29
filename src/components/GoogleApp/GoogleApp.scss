@@ -3,6 +3,7 @@ $b-radius: 10px;
 $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 $b: 1px solid #ddd;
 $bg-color: rgba(249, 249, 249, 0.5); // Semi-transparent
+$p: 1em;
 
 // Réinitialisation des styles de base
 * {
@@ -21,34 +22,40 @@ $bg-color: rgba(249, 249, 249, 0.5); // Semi-transparent
     width: 100%;
     height: 350px;
     margin: 3em 0;
-    padding: 2em 1em;
+    padding: $p;
     background-image: url('../../assets/images/sun.jpg');
     background-size: cover; // Assurer que l'image de fond couvre tout l'espace
     background-repeat: no-repeat;
     border-radius: $b-radius;
     box-shadow: $shadow;
 
-    .c-item {
-      width: 30%;
-      height: 95%;
-      border: $b;
-      background-color: $bg-color;
-      border-radius: $b-radius;
-      box-shadow: $shadow;
+    .c-col {
+      width: 24%;
+      height: calc(100% - $p);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &.map {
+        width: 49%;
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+      }
+      // Styles pour la carte Leaflet (si utilisée)
+      .map-container {
+        height: 100%;
+        .map {
+          width: 100%;
+          height: inherit;
+          border-radius: $b-radius; 
+        }
+      }
 
-      
+      .c-item {
+        height: 48%;
+        background-color: $bg-color;
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+      }
     }
-  }
-}
-
-// Styles pour la carte Leaflet (si utilisée)
-.map-container {
-  width: 100%;
-  height: 100%;
-
-  .map {
-    width: 100%;
-    height: 100%;
-    border-radius: $b-radius; 
   }
 }

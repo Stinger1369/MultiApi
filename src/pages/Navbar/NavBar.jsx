@@ -16,7 +16,7 @@ function NavBar({ onSearch }) {
 
   return (
     <nav className="navbar">
-      <div className="logo">Weather App</div>
+      <div className="logo">MultiAPI</div>
       <div className="nav">
         <Link to="/">Accueil</Link>
         <Link to="/about">A propos</Link>

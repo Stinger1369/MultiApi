@@ -8,15 +8,19 @@ $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  background-color: #f8f8f8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5em 1em;
+  background-color: #e5dcdc;
+  box-shadow: $shadow;
+  border-bottom-left-radius: $b-radius;
+  border-bottom-right-radius: $b-radius;
 }
 
 .navbar .logo {
   font-size: 20px;
   font-weight: bold;
+  font-style: italic;
   color: #333;
+  font-family: 'Dancing Script', cursive;
 }
 
 .navbar .nav {
@@ -38,6 +42,7 @@ $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
 .navbar .search {
   display: flex;
   align-items: center;
+  margin-left: 2em;
 }
 
 .navbar input[type="text"] {

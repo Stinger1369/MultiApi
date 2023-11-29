@@ -31,11 +31,17 @@ function App() {
               <div className="content">
                 {city && (
                   <>
-                    <Population title={`Population de ${city}`} city={city} />
-                    <GoogleApp center={center} />
-                    <Population title={`Population de ${city}`} city={city} />
-
-                    
+                    <div className="c-col">
+                      <Population title={`Population de ${city}`} city={city} />
+                      <Population title={`Population de ${city}`} city={city} />
+                    </div>
+                    <div className="c-col map">
+                      <GoogleApp center={center} />
+                    </div>
+                    <div className="c-col">
+                      <Population title={`Population de ${city}`} city={city} />
+                      <Population title={`Population de ${city}`} city={city} />
+                    </div>  
                   </>
                 )}
               </div>

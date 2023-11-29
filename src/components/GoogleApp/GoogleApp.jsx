@@ -28,7 +28,7 @@ function MapApp({ center }) {
   }, [center]); // Se déclenche lorsque les coordonnées 'center' changent
 
   return (
-    <div className="c-item map-container">
+    <div className="map-container">
       <div ref={mapContainerRef} className="map" />
     </div>
   );
