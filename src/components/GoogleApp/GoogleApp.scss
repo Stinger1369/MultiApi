@@ -19,7 +19,7 @@ $bg-color: rgba(249, 249, 249, 0.5); // Semi-transparent
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 450px;
+    height: 350px;
     margin: 3em 0;
     padding: 2em 1em;
     background-image: url('../../assets/images/sun.jpg');
@@ -29,22 +29,14 @@ $bg-color: rgba(249, 249, 249, 0.5); // Semi-transparent
     box-shadow: $shadow;
 
     .c-item {
-      width: 15%;
+      width: 30%;
       height: 95%;
       border: $b;
       background-color: $bg-color;
       border-radius: $b-radius;
       box-shadow: $shadow;
 
-      &.google-map-container {
-        width: 35%; // Ajuster la largeur du conteneur de la carte
-        .map {
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          border-radius: $b-radius;
-        }
-      }
+      
     }
   }
 }

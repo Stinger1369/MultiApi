@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './pages/Navbar/NavBar';
 import Weather from './components/Weather/Weather';
 import GoogleApp from './components/GoogleApp/GoogleApp';
 import UnsplashImages from './components/Unsplash/Unsplash';
-import  getCoordinatesForCity  from './components/GoogleApp/getCoordinatesForCity';
-import Population from './components/Population/Population';  
-import './App.css'; 
+import getCoordinatesForCity from './components/GoogleApp/getCoordinatesForCity';
+import Population from './components/Population/Population';
+import About from './pages/About/About'; 
+import Contact from './pages/Contact/Contact'; 
+import './App.css';
 
 function App() {
-  const [city, setCity] = useState('paris'); // Commencez avec une ville vide
-  const [center, setCenter] = useState(null); // Commencez sans coordonnées
+  const [city, setCity] = useState('paris'); 
+  const [center, setCenter] = useState(null); 
 
   const handleSearch = async (term) => {
     setCity(term);
@@ -18,29 +21,34 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <NavBar onSearch={handleSearch} />
-      <Weather city={city} />
-      <div className="content">
-        {city && (
-          <>
-            <div className="c-item"></div>
-            <Population title={`Population de ${city}`} city={city} />
-            <GoogleApp center={center} />
-            <div className="c-item"></div>
-            <div className="c-item"></div>
-          </>
-        )}
-      </div>
-      {city && (
-        <>
+    <Router>
+      <div className="App">
+        <NavBar onSearch={handleSearch} />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Weather city={city} />
+              <div className="content">
+                {city && (
+                  <>
+                    <Population title={`Population de ${city}`} city={city} />
+                    <GoogleApp center={center} />
+                    <Population title={`Population de ${city}`} city={city} />
+
+                    
+                  </>
+                )}
+              </div>
+            </>
+          } />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           
-          <UnsplashImages searchTerm={city} />
-        </>
-      )}
-    </div>
+        </Routes>
+        <UnsplashImages searchTerm={city} />
+      </div>
+    </Router>
   );
 }
 
 export default App;
-
