@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Population.css';
+import './Population.scss';
 
 function Population({ title, city }) {
     const [communes, setCommunes] = useState([]);

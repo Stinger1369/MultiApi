@@ -8,7 +8,7 @@ import getCoordinatesForCity from './components/GoogleApp/getCoordinatesForCity'
 import Population from './components/Population/Population';
 import About from './pages/About/About'; 
 import Contact from './pages/Contact/Contact'; 
-import './App.css';
+import './App.scss';
 
 function App() {
   const [city, setCity] = useState('paris'); 
