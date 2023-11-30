@@ -1,50 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function MarketStak() {
-  const [marketData, setMarketData] = useState(null);
-  const [error, setError] = useState(null);
+function MarketStack() {
+  const [stockData, setStockData] = useState(null);
+  const apiKey = 'clk41ipr01ql1cbge0q0clk41ipr01ql1cbge0qg'; // Remplacez par votre clé API Finnhub
 
   useEffect(() => {
     const fetchData = async () => {
+      // Remplacement de l'URL par celle de l'API Finnhub
+      const url = `https://finnhub.io/api/v1/quote?symbol=AAPL&token=${apiKey}`;
       try {
-        const apiKey = import.meta.env.VITE_BOURSES_API_KEY;
-        const url = `https://api.marketstack.com/v1/tickers?access_key=${apiKey}`;
         const response = await fetch(url);
-        if (!response.ok) throw new Error('Erreur lors de la récupération des données');
         const data = await response.json();
-        setMarketData(data);
+        setStockData(data);
         console.log(data);
       } catch (error) {
-        setError(error.message);
+        console.error('Erreur lors de la récupération des données:', error);
       }
     };
 
     fetchData();
   }, []);
 
-  if (error) return <div>Erreur : {error}</div>;
-  if (!marketData) return <div>Chargement...</div>;
+  if (!stockData) return <div>Chargement des données...</div>;
 
   return (
     <div>
-      <h1>Données du Marché</h1>
-        <p>Voici les données du marché:</p>
-        <p>Nombre de données: {marketData.pagination.count}</p>
-        <p>Nombre de pages: {marketData.pagination.limit}</p>
-        <p>Page courante: {marketData.pagination.offset}</p>
-        <p>Nombre total de pages: {marketData.pagination.total}</p>
-        <h2>Données des actions</h2>
-        <p>Voici les données des actions:</p>
-
-
-      <ul>
-        {marketData.data.map((item, index) => (
-          <li key={index}>{item.name} - {item.symbol}</li>
-
-        ))}
-      </ul>
+      <h1>Données Boursières</h1>
+      {/* Affichage des données */}
+      <p>{JSON.stringify(stockData, null, 2)}</p>
+      
     </div>
   );
 }
 
-export default MarketStak;
+export default MarketStack;

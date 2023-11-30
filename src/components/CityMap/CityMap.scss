@@ -35,18 +35,20 @@ $p: 1em;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       &.map {
         width: 49%;
         border-radius: $b-radius;
         box-shadow: $shadow;
-      }
-      // Styles pour la carte Leaflet (si utilisée)
-      .map-container {
-        height: 100%;
-        .map {
-          width: 100%;
-          height: inherit;
-          border-radius: $b-radius; 
+
+        // Styles pour la carte Leaflet (si utilisée)
+        .map-container {
+          height: 100%;
+          .map {
+            width: 100%;
+            height: inherit;
+            border-radius: $b-radius; 
+          }
         }
       }
 

@@ -2,22 +2,19 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './pages/Navbar/NavBar';
 import Weather from './components/Weather/Weather';
-import GoogleApp from './components/GoogleApp/GoogleApp';
+import CityMap from './components/CityMap/CityMap'; // Assurez-vous que le chemin d'importation est correct
 import UnsplashImages from './components/Unsplash/Unsplash';
-import getCoordinatesForCity from './components/GoogleApp/getCoordinatesForCity';
 import Population from './components/Population/Population';
 import About from './pages/About/About'; 
 import Contact from './pages/Contact/Contact'; 
+import MarketStack from './components/MarketStack/MarketStack';
 import './App.scss';
 
 function App() {
-  const [city, setCity] = useState('tunis'); 
-  const [center, setCenter] = useState(null); 
+  const [city, setCity] = useState('tunis');
 
   const handleSearch = async (term) => {
     setCity(term);
-    const coordinates = await getCoordinatesForCity(term);
-    setCenter(coordinates);
   };
 
   return (
@@ -36,11 +33,11 @@ function App() {
                       <Population title={`Population`} city={city} />
                     </div>
                     <div className="c-col map">
-                      <GoogleApp center={center} />
+                      <CityMap city={city} />
                     </div>
                     <div className="c-col">
-                      <Population title={`Population`} city={city} />
-                      <Population title={`Population`} city={city} />
+                      <MarketStack title={`MarketStack`}  />
+                      <MarketStack title={`MarketStack`}  />
                     </div>  
                   </>
                 )}
@@ -49,7 +46,6 @@ function App() {
           } />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          
         </Routes>
         <UnsplashImages searchTerm={city} />
       </div>
