@@ -1,35 +1,52 @@
 import React, { useEffect, useState } from 'react';
+import './MarketStack.scss';
+import socket from '../../utils/WebSocket';
 
 function MarketStack() {
   const [stockData, setStockData] = useState(null);
-  const apiKey = 'clk41ipr01ql1cbge0q0clk41ipr01ql1cbge0qg'; // Remplacez par votre clé API Finnhub
 
+  // Écoutez les événements du socket et mettez à jour stockData en conséquence
   useEffect(() => {
-    const fetchData = async () => {
-      // Remplacement de l'URL par celle de l'API Finnhub
-      const url = `https://finnhub.io/api/v1/quote?symbol=AAPL&token=${apiKey}`;
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setStockData(data);
-        console.log(data);
-      } catch (error) {
-        console.error('Erreur lors de la récupération des données:', error);
+    const handleMessage = (event) => {
+      const json = JSON.parse(event.data);
+  
+      // Traitez les messages reçus ici
+      if (json.type === 'trade' && json.data && json.data.length > 0) {
+        const newStockData = json.data[0];
+        console.log('Nouvelles données de trade reçues :', newStockData);
+  
+        // Mettez à jour l'état avec les nouvelles données
+        setStockData(newStockData);
       }
     };
-
-    fetchData();
+  
+    const handleClose = () => {
+      console.log('WebSocket Disconnected');
+    };
+  
+    socket.addEventListener('message', handleMessage);
+    socket.addEventListener('close', handleClose);
+  
+    return () => {
+      // Supprimez les écouteurs lorsque le composant est démonté
+      socket.removeEventListener('message', handleMessage);
+      socket.removeEventListener('close', handleClose);
+    };
   }, []);
-
+  
   if (!stockData) return <div>Chargement des données...</div>;
 
   return (
-    <div>
-      <h1>Données Boursières</h1>
-      {/* Affichage des données */}
-      <p>{JSON.stringify(stockData, null, 2)}</p>
-      
-    </div>
+    <div className="market-stack">
+    <h2>{stockData.s}</h2>
+    <p>Prix actuel: {stockData.p || 'Non disponible'}</p>
+    <p>Volume: {stockData.v || 'Non disponible'}</p>
+    <p>Conditions de commerce: {stockData.c.join(', ') || 'Non disponible'}</p>
+    
+    <p>Timestamp: {new Date(stockData.t).toLocaleString() || 'Non disponible'}</p>
+
+  </div>
+  
   );
 }
 

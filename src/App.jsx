@@ -11,7 +11,7 @@ import MarketStack from './components/MarketStack/MarketStack';
 import './App.scss';
 
 function App() {
-  const [city, setCity] = useState('tunis');
+  const [city, setCity] = useState('Quebec');
 
   const handleSearch = async (term) => {
     setCity(term);
@@ -37,7 +37,7 @@ function App() {
                     </div>
                     <div className="c-col">
                       <MarketStack title={`MarketStack`}  />
-                      <MarketStack title={`MarketStack`}  />
+                      
                     </div>  
                   </>
                 )}
