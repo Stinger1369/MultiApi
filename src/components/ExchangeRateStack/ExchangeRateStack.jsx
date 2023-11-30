@@ -25,7 +25,7 @@ const ExchangeComponent = () => {
     }, []);
 
     return (
-        <div className="exchange-component">
+        <div className="c-item exchange-component">
         {exchangeData ? (
             <div>
                 <p>Taux de change pour : {exchangeData.base_code}</p>

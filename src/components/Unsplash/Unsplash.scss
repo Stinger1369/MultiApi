@@ -1,7 +1,4 @@
-$b-radius: 10px;
-$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-$b: 1px solid #ddd;
-$bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
+@import '../../variables';
        
 @keyframes scrollImages {
   0% {
@@ -18,10 +15,7 @@ $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
     flex-wrap: nowrap;
     overflow: hidden;
     align-items: center;
-    padding: 2em;
-    background-color: $bg-color;
     border-radius: $b-radius;
-    box-shadow: $shadow;
     position: relative;
 
     .image-set {
@@ -32,11 +26,11 @@ $bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
       img {
         flex: 0 0 auto;
         margin-right: 10px;
-        width: 200px;
+        width: 300px;
         height: 150px;
+        margin: 0 $p;
         object-fit: cover;
         border-radius: $b-radius;
-        box-shadow: $shadow;
 
         &:last-child {
           margin-right: 0;

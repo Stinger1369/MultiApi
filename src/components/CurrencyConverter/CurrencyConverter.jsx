@@ -34,8 +34,8 @@ const CurrencyConverter = () => {
     };
 
     return (
-        <div className="currency-converter">
-            <h2>Convertir la Devise</h2>
+        <div className="c-item currency-converter">
+            <h2 className='title'>Convertir la Devise</h2>
             <input 
                 type="number" 
                 value={amount} 
@@ -51,8 +51,11 @@ const CurrencyConverter = () => {
                     <option key={currency} value={currency}>{currency}</option>
                 ))}
             </select>
+            <p className='result'>          
+                {convertedAmount && <div className=''>{amount} USD = {convertedAmount} {targetCurrency}</div>}
+            </p>
             <button onClick={convertCurrency} disabled={!exchangeData}>Convertir</button>
-            {convertedAmount && <p>{amount} USD = {convertedAmount} {targetCurrency}</p>}
+            
         </div>
     );
 };

@@ -1,19 +1,14 @@
-.exchange-component {
-    max-width: 400px; // Largeur maximale du composant
-    margin: auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+@import '../../variables';
 
+.exchange-component {
     h1 {
-        color: #333;
-        text-align: center;
+        // color: #333;
+        // text-align: center;
     }
 
     .exchange-list {
         height: 150px; // Hauteur fixe pour afficher seulement 4 éléments
-        overflow-y: auto; // Activer le défilement vertical
+        overflow-y: hidden; // Activer le défilement vertical
         list-style: none;
         padding: 0;
         margin-top: 10px;
@@ -29,7 +24,7 @@
     }
 
     p {
-        color: #666;
+        color: #cc5555;
         text-align: center;
     }
 }
