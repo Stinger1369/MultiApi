@@ -36,12 +36,6 @@ function UnsplashImages({ searchTerm }) {
   };
 
   return (
-<<<<<<< Updated upstream
-    <div className="image-gallery">
-      {images.map(image => (
-        <img key={image.id} src={image.urls.small} alt={image.alt_description} />
-      ))}
-=======
     <div 
       className="unsplash image-gallery"
       onMouseEnter={handleMouseEnter}
@@ -57,7 +51,6 @@ function UnsplashImages({ searchTerm }) {
           <img key={`img2-${index}`} src={image.urls.small} alt={image.alt_description} />
         ))}
       </div>
->>>>>>> Stashed changes
     </div>
   );
 }
