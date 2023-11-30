@@ -1,28 +1,47 @@
-@import '../../variables';
+$b-radius: 10px;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$b: 1px solid #ddd;
+$bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
        
-.image-gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  border: $b;
-  border-radius: $b-radius;
-  // box-shadow: $shadow;
-  // background-color: $bg-color;
-  // background-image: url('../../assets/images/sun.jpg');
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-  img {
-    height: 100%;
-    width: calc(33.333% - 1rem);
-    border: $b;
+.unsplash {
+  &.image-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    align-items: center;
+    padding: 2em;
+    background-color: $bg-color;
     border-radius: $b-radius;
     box-shadow: $shadow;
-    transition: transform 0.3s ease-in-out; /* Animation pour le survol */
-    &:hover {
-      transform: scale(1.05); /* Agrandir légèrement l'image au survol */
-      cursor: pointer; /* Changer le curseur au survol */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+    position: relative;
+
+    .image-set {
+      display: flex;
+      flex-wrap: nowrap;
+      animation: scrollImages 30s linear infinite;
+
+      img {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
