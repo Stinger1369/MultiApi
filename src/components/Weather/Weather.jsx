@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Weather.css';
+import './Weather.scss';
 import Rain from '../../assets/images/rain.jpg';
 import Sun from '../../assets/images/sun.jpg';
 import Snow from '../../assets/images/snow.jpg';
@@ -84,39 +84,43 @@ function Weather({ city }) {
 
   return (
     <div className="weather" style={{ backgroundImage: `url(${backgroundImage})` }}>
+
       <div className="firstBlock">
-      <div className="ville">      
-        <h1>{currentWeather.name}</h1>
-        <p>{currentWeather.sys.country}</p>
-        <p>{new Date(currentWeather.dt * 1000).toLocaleDateString()}</p>
-        <p>{new Date(currentWeather.dt * 1000).toLocaleTimeString()}</p>
-        <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
+        
+
+        <div className="temp">
+          <p className='temperature'>Température: {currentWeather.main.temp}°C</p>
+          <p>T. Ressentie: {currentWeather.main.feels_like}°C</p>
+          <p>T. Minimale: {currentWeather.main.temp_min}°C</p>
+          <p>T. Maximale: {currentWeather.main.temp_max}°C</p>
+        </div>
+
+        <div className="ville">      
+          <h1>{currentWeather.name}</h1>
+          <p className='country'>{currentWeather.sys.country}</p>
+          <p>{new Date(currentWeather.dt * 1000).toLocaleDateString()}</p>
+          <p className='hour'>( {new Date(currentWeather.dt * 1000).toLocaleTimeString()} )</p>
+          <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" className='w-icon'/>
+        </div>
+
+        <div className="info">
+          <p className='condition'>Conditions: {currentWeather.weather[0].description}</p>
+          <p>Humidité: {currentWeather.main.humidity}%</p>
+          <p>Pression: {currentWeather.main.pressure}hPa</p>
+          <p>Vitesse du vent: {currentWeather.wind.speed}km/h</p>
+        </div>
       </div>
-      <div className="temp">
-        <p>Température: {currentWeather.main.temp}°C</p>
-        <p>Température ressentie: {currentWeather.main.feels_like}°C</p>
-        <p>Température minimale: {currentWeather.main.temp_min}°C</p>
-        <p>Température maximale: {currentWeather.main.temp_max}°C</p>
-        <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
-      </div>
-      <div className="info">
-        <p>Conditions: {currentWeather.weather[0].description}</p>
-        <p>Humidité: {currentWeather.main.humidity}%</p>
-        <p>Pression: {currentWeather.main.pressure}hPa</p>
-        <p>Vitesse du vent: {currentWeather.wind.speed}km/h</p>
-        <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
-      </div>
-      </div>
+
       <div className="weekly-forecast" style={{ color: textColor }}>
       {weeklyForecast.map((day, index) => (
         <div key={index} className="daily-forecast">
           <p>{new Date(day.dt * 1000).toLocaleDateString()}</p>
-          <img src={getIconUrl(day.weather[0].icon)} alt="Daily weather icon" />
-          <p>Max: {day.temp.max}°C</p>
-          <p>Min: {day.temp.min}°C</p>
+          <img src={getIconUrl(day.weather[0].icon)} alt="Daily weather icon" className='daily-icon' />
+          <p className='ranger'>{day.temp.min}°C - {day.temp.max}°C</p>
         </div>
       ))}
-    </div>
+      </div>
+
     </div>
   );
 }

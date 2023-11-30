@@ -1,0 +1,78 @@
+@import '../../variables';
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: $p*2;
+    padding: $p;
+    border: $b;
+    border-radius: $b-radius;
+    background-color: $bg-color;
+    box-shadow: $shadow;
+    text-align: center;
+    background-size: cover; 
+    background-position: center;
+    .firstBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60%;
+        .ville, .temp, .info {
+            padding: $p;
+            border: $b;
+            border-radius: $b-radius;
+            background-color: $bg-color;
+            box-shadow: $shadow;
+            width: 32%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            h1 {
+                font-size: 27px;
+            }
+            p {
+                margin: 10px 0;
+                font-size: 18px;
+                &.hour {
+                    font-style: italic;
+                    font-size: small;
+                    margin-top: -0.7em;
+                    margin-bottom: 0.4em;
+                }
+                &.temperature, &.condition {
+                    font-size: large;
+                    font-weight: bold;
+                }
+            }
+            .country {
+                position: absolute;
+                top: 0;
+                right: 1em;
+                font-family: $f-art;
+            }
+            .w-icon {
+                width: 4rem; /* Largeur de l'icône */
+                height: 4rem; /* Hauteur de l'icône */
+            }            
+        }
+    }
+    
+    .weekly-forecast {
+        height: 35%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $p;
+        border-radius: $b-radius;
+        background-color: $bg-color;
+        box-shadow: $shadow;
+        font-size: 0.9rem;
+        .daily-icon {
+
+        }
+        .ranger {
+            font-style: italic;
+        }
+    }
+}

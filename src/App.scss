@@ -1,22 +1,64 @@
-$b-radius: 10px;
-$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-$b: 1px solid #ddd;
-$bg-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
-$p: 1em;
+@import './variables';
 
 .App {
+  height: 100%;
+  nav {
+    height: 4vh;
+  }
+  .weather {
+    height: 25vh;
+  }
   .content {
+    height: 43vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 350px;
-    margin: 2em 0;
-    padding: $p;
-    background-image: url('./assets/images/sun.jpg');
+    margin: $p 0;
+    padding: $p 0;
+    // background-image: url('./assets/images/sun.jpg');
     background-repeat: no-repeat;
     background-size: cover; // Assurer que l'image de fond couvre tout l'espace
     border-radius: $b-radius;
+    // box-shadow: $shadow;
+    
+    .c-col {
+      width: 24%;
+      height: calc(100% - $p);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      &.map {
+        width: 48%;
+        border: $b;
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+      }
+      .c-item {
+        height: 48%;
+        background-color: $bg-color;
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+        //background-image: url('./assets/images/sun.jpg');
+      }
+    }
+  }
+  .unsplash {
+    height: 15vh;
+  }
+  .footer {
+    height: 5vh;
+    width: $w;
+    position: absolute;
+    bottom: 0;
+    // background-color: $bg-color;
+    background-color: rgb(107 150 201 / 50%);
+    border-radius: $b-radius;
     box-shadow: $shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $f-art;
   }
 }
