@@ -4,11 +4,12 @@
 
   nav {
     height: 4vh;
+    margin-bottom: $p-m;
   }
 
   .weather {
     height: 25vh;
-    margin: $p 0;
+    margin: $p-m 0;
   }
 
   .content {
@@ -37,17 +38,33 @@
       }
       .c-item {
         height: 48%;
+        width: 100%;
+        padding: $p;
+        color: $c-white;
         background-color: $bg-color;
         border-radius: $b-radius;
         box-shadow: $shadow;
         background-image: url('./assets/images/sun.jpg');
+        .title {
+          font-family: $f-art;
+        }
+        .c-card {
+          padding: $p;
+          margin-top: $p;
+          height: 72%;
+          font-size: 1.2em;
+          background-color: rgb(159 197 197 / 41%);
+          border-radius: $b-radius;
+          box-shadow: $shadow;
+          text-align: center;
+        }
       }
     }
   }
 
   .unsplash {
-    height: 15vh;
-    margin: $p 0;
+    height: 12vh;
+    margin: $p-m 0;
   }
   
   footer {

@@ -37,14 +37,15 @@ function MarketStack() {
   if (!stockData) return <div>Chargement des données...</div>;
 
   return (
-    <div className="market-stack">
-    <h2>{stockData.s}</h2>
-    <p>Prix actuel: {stockData.p || 'Non disponible'}</p>
-    <p>Volume: {stockData.v || 'Non disponible'}</p>
-    <p>Conditions de commerce: {stockData.c.join(', ') || 'Non disponible'}</p>
-    
-    <p>Timestamp: {new Date(stockData.t).toLocaleString() || 'Non disponible'}</p>
-
+    <div className="c-item market-stack">
+      <h2 className='title'>{stockData.s}</h2>
+      <div className="c-card">
+        <p>Prix actuel: {stockData.p || 'Non disponible'}</p>
+        <p>Volume: {stockData.v || 'Non disponible'}</p>
+        <p>Conditions de commerce: {stockData.c.join(', ') || 'Non disponible'}</p>
+        
+        <p>Timestamp: {new Date(stockData.t).toLocaleString() || 'Non disponible'}</p>
+      </div>
   </div>
   
   );

@@ -1,26 +1,39 @@
+@import '../../variables';
+
 .currency-converter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 300px;
-    margin: auto;
-    padding: 20px;
     background-color: #f5f5f5;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     h2 {
-        color: #333;
         margin-bottom: 20px;
     }
 
     input, select, button {
         width: 100%;
-        padding: 10px;
+        padding: 0.8*$p;
         margin-bottom: 10px;
         border: 1px solid #ddd;
         border-radius: 4px;
         box-sizing: border-box;
+    }
+
+    p.result {
+        margin-top: 0.2*$p;
+        font-size: 1.1em;
+        height: 20px;
+        width: 80%;
+        padding: $p;
+        background-color: rgb(159 197 197 / 41%);
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+        text-align: center;
+        div {
+            margin-top: -10px;
+        }
     }
 
     button {
@@ -28,20 +41,13 @@
         color: white;
         border: none;
         cursor: pointer;
-
+        margin-top: $p;
         &:hover {
             background-color: #0056b3;
         }
-
         &:disabled {
             background-color: #cccccc;
             cursor: default;
         }
-    }
-
-    p {
-        margin-top: 15px;
-        color: #666;
-        font-size: 1.1em;
     }
 }

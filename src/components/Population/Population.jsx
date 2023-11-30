@@ -28,7 +28,7 @@ function Population({ title, city }) {
           <h2>{title}</h2>
         </div>
         
-        <div className="communes-list">
+        <div className="c-card communes-list">
           {communes.map((commune, index) => (
             <div key={index} className="commune">
               <h3>{commune.nom}</h3>
