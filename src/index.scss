@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // line-height: 20px !important; /* Set line height to 24 pixels */
 }
 p {
   padding: 0;
@@ -13,7 +12,7 @@ p {
 
 body {
   height: 100svh;
-  width: 100vw;
+  width: 100vw !important;
   background-color: #ddd;
   // background-color: #221e1e;
   overflow-y: hidden;
@@ -26,13 +25,28 @@ body {
 }
 
 /* Styles for screens bigger than 600 pixels wide */
-@media screen and (min-width: $lg) {
+@media screen and (min-width: $lg) and (max-width: 1919px)  {
   body {
+    font-size: 0.7em !important;
+    // line-height: 0.8em !important;
+    // background-color: aqua;
     #root {
       width: $w;
       margin: 0 auto;
       footer {
         width: $w;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $xl) {
+  body {
+    #root {
+      width: 1200px;
+      margin: 0 auto;
+      footer {
+        width: 1200px;
       }
     }
   }

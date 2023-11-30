@@ -16,7 +16,7 @@
     overflow: hidden;
     align-items: center;
     border-radius: $b-radius;
-    position: relative;
+    // position: relative;
 
     .image-set {
       display: flex;
@@ -30,7 +30,7 @@
         height: 150px;
         margin: 0 $p;
         object-fit: cover;
-        border-radius: $b-radius;
+        border-radius: $b-radius !important;
 
         &:last-child {
           margin-right: 0;

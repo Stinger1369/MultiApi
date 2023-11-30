@@ -10,12 +10,17 @@ nav {
   box-shadow: $shadow;
   border-bottom-left-radius: $b-radius;
   border-bottom-right-radius: $b-radius;
-  .nav-logo {
-    font-family: $f-art;
-    font-size: 1.5em;
-    text-decoration: none !important;
-    color: rgb(20, 19, 19);
-    margin-left: $p;
+
+  .nav-l, .nav-r {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .nav-logo {
+      font-family: $f-art;
+      font-size: 1.5em;
+      color: rgb(20, 19, 19);
+      margin-left: $p;
+    }
   }
 }
 
@@ -40,19 +45,14 @@ nav {
   height: 100%; /* Remplir complètement la hauteur de la div parente */
 }
 
-.navbar .nav {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .nav a {
+.navbar .nav-r a {
   margin: 0 10px;
   text-decoration: none;
   color: #333;
   transition: color 0.3s ease;
 }
 
-.navbar .nav a:hover {
+.navbar .nav-r a:hover {
   color: #007bff;
 }
 
@@ -89,4 +89,15 @@ nav {
 
 .navbar button:hover {
   background-color: $bg-nav;
+}
+
+
+@media screen and (max-width: $lg) {
+  nav {
+    width: 100vw;
+    padding: 0 $p !important;
+    .nav-logo, .nav-r .links {
+      display: none;
+    }
+  }
 }

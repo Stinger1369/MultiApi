@@ -48,9 +48,7 @@ function MarketStack() {
         <div className="c-card">
           <p>Prix actuel: {stockData.p || 'Non disponible'}</p>
           <p>Volume: {stockData.v || 'Non disponible'}</p>
-          
           <p>Conditions de commerce: {stockData.c.join(', ') || 'Non disponible'}</p> 
-
           <p>Timestamp: {new Date(stockData.t).toLocaleString() || 'Non disponible'}</p>
         </div>
       </div>

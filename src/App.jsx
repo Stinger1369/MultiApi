@@ -14,7 +14,7 @@ import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter'
 import './App.scss';
 
 function App() {
-  const [city, setCity] = useState('Quebec');
+  const [city, setCity] = useState('Paris');
 
   const handleSearch = async (term) => {
     setCity(term);

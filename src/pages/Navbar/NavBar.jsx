@@ -17,36 +17,39 @@ function NavBar({ onSearch }) {
 
   return (
     <nav className="navbar">
-      <Link to="/"> 
-      <div className="logo">
-        {/* <div className='frame'>
-          <iframe
-            allow="fullscreen"
-            frameBorder="0"
-            src="https://giphy.com/embed/SgUUMhQXsgklZJynyN/video"
-            title="Giphy Video"
-          ></iframe>
-        </div> */}
-        <img src={Logo} alt="MultiAPI Logo" /> 
+      <div className="nav-l">
+        <Link to="/"> 
+          <div className="logo">
+            {/* <div className='frame'>
+              <iframe
+                allow="fullscreen"
+                frameBorder="0"
+                src="https://giphy.com/embed/SgUUMhQXsgklZJynyN/video"
+                title="Giphy Video"
+              ></iframe>
+            </div> */}
+            <img src={Logo} alt="MultiAPI Logo" /> 
+          </div>
+        </Link>  
         <div className="nav-logo">MultiAPI</div>
       </div>
 
-      
-      
-      </Link>  <div className="nav">
-        <Link to="/">Accueil</Link>
-        <Link to="/about">A propos</Link>
-        <Link to="/contact">Contact</Link>
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Rechercher une ville..."
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
-          <button onClick={handleSearch}>Recherche</button>
+      <div className="nav-r">
+        <div className="links">
+          <Link to="/">Accueil</Link>
+          <Link to="/about">A propos</Link>
+          <Link to="/contact">Contact</Link>
         </div>
-      </div>
+        <div className="search">
+            <input
+              type="text"
+              placeholder="Rechercher une ville..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            <button onClick={handleSearch}>Recherche</button>
+          </div>
+        </div>
     </nav>
   );
 }
