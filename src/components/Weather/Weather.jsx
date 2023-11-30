@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Weather.css';
+import './Weather.scss';
 import Rain from '../../assets/images/rain.jpg';
 import Sun from '../../assets/images/sun.jpg';
 import Snow from '../../assets/images/snow.jpg';

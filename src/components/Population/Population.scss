@@ -1,9 +1,4 @@
-// Déclaration des variables
-$b-radius: 10px;
-$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-$b: 1px solid #ddd;
-$bg-color: rgba(249, 249, 249, 0.5); // Semi-transparent
-$p: 1em;
+@import '../../variables';
 
 .population {
   // border: 1px solid red;
