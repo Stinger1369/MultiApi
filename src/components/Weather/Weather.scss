@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // margin: 0;
+    margin-top: $p*2;
     padding: $p;
     border: $b;
     border-radius: $b-radius;
@@ -13,45 +13,66 @@
     text-align: center;
     background-size: cover; 
     background-position: center;
-    // height: 35vh;
     .firstBlock {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 60%;
         .ville, .temp, .info {
-            // font-size: 30px;
-            font-weight: bold;
-            color: #333;
-            border: 1px solid #ddd;
+            padding: $p;
+            border: $b;
             border-radius: $b-radius;
             background-color: $bg-color;
             box-shadow: $shadow;
-            // padding: 0;
-            // margin: 20px 0;
-            width: 30%;
+            width: 32%;
             height: 100%;
             overflow: hidden;
+            position: relative;
             h1 {
-                margin: 0;
-                color: #333;
-                font-size: 24px;
+                font-size: 27px;
             }
             p {
                 margin: 10px 0;
-               
                 font-size: 18px;
+                &.hour {
+                    font-style: italic;
+                    font-size: small;
+                    margin-top: -0.7em;
+                    margin-bottom: 0.4em;
+                }
+                &.temperature, &.condition {
+                    font-size: large;
+                    font-weight: bold;
+                }
             }
-            .weather-icon {
-                width: 100px; /* Largeur de l'icône */
-                height: 100px; /* Hauteur de l'icône */
+            .country {
+                position: absolute;
+                top: 0;
+                right: 1em;
+                font-family: $f-art;
+            }
+            .w-icon {
+                width: 4rem; /* Largeur de l'icône */
+                height: 4rem; /* Hauteur de l'icône */
             }            
         }
     }
+    
     .weekly-forecast {
         height: 35%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: $p;
+        border-radius: $b-radius;
+        background-color: $bg-color;
+        box-shadow: $shadow;
+        font-size: 0.9rem;
+        .daily-icon {
+
+        }
+        .ranger {
+            font-style: italic;
+        }
     }
 }

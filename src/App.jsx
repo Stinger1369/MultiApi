@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './pages/Navbar/NavBar';
+import Footer from './pages/Footer/Footer';
 import Weather from './components/Weather/Weather';
 import CityMap from './components/CityMap/CityMap'; // Assurez-vous que le chemin d'importation est correct
 import UnsplashImages from './components/Unsplash/Unsplash';
@@ -48,6 +49,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <UnsplashImages searchTerm={city} />
+        <Footer />
       </div>
     </Router>
   );

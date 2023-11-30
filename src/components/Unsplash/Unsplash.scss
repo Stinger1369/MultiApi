@@ -5,17 +5,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 300px;
-  padding: 2em 1em;
+  padding: 0 $p;
   border: $b;
-  background-color: $bg-color;
   border-radius: $b-radius;
-  box-shadow: $shadow;
-  background-image: url('../../assets/images/sun.jpg');
+  // box-shadow: $shadow;
+  // background-color: $bg-color;
+  // background-image: url('../../assets/images/sun.jpg');
 
   img {
     height: 100%;
     width: calc(33.333% - 1rem);
+    border: $b;
     border-radius: $b-radius;
     box-shadow: $shadow;
     transition: transform 0.3s ease-in-out; /* Animation pour le survol */

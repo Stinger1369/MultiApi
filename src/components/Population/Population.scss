@@ -8,9 +8,15 @@
   .communes-list {
     padding: $p;
     margin-top: $p;
-    // height: 100px;
+    height: 72%;
+    font-size: 1.2em;
     background-color: rgb(159 197 197 / 41%);
     border-radius: $b-radius;
     box-shadow: $shadow;
+    text-align: center;
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
   }
 }

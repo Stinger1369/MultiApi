@@ -3,24 +3,24 @@
 .App {
   height: 100%;
   nav {
-    height: 3vh;
+    height: 4vh;
   }
   .weather {
     height: 25vh;
   }
   .content {
-    height: 45vh;
+    height: 43vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 2em 0;
+    margin: $p 0;
     padding: $p;
-    background-image: url('./assets/images/sun.jpg');
+    // background-image: url('./assets/images/sun.jpg');
     background-repeat: no-repeat;
     background-size: cover; // Assurer que l'image de fond couvre tout l'espace
     border-radius: $b-radius;
-    box-shadow: $shadow;
+    // box-shadow: $shadow;
     
     .c-col {
       width: 24%;
@@ -28,8 +28,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      
       &.map {
-        width: 49%;
+        width: 48%;
+        border: $b;
         border-radius: $b-radius;
         box-shadow: $shadow;
       }
@@ -38,6 +40,7 @@
         background-color: $bg-color;
         border-radius: $b-radius;
         box-shadow: $shadow;
+        background-image: url('./assets/images/sun.jpg');
       }
     }
   }
@@ -46,7 +49,16 @@
   }
   .footer {
     height: 5vh;
-    width: 100%;
-    background-color: aqua;
+    width: $w;
+    position: absolute;
+    bottom: 0;
+    // background-color: $bg-color;
+    background-color: rgb(107 150 201 / 50%);
+    border-radius: $b-radius;
+    box-shadow: $shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $f-art;
   }
 }
