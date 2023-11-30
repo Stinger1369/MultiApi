@@ -5,7 +5,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
   background-color: #ddd;
   overflow-y: hidden;
@@ -13,6 +13,7 @@ body {
 
 #root {
   max-width: 1200px;
+  max-height: 100%;
   margin: 0 auto;
 }
 
@@ -49,15 +50,15 @@ a:hover {
   color: #535bf2;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     color: #213547;
+//     background-color: #ffffff;
+//   }
+//   a:hover {
+//     color: #747bff;
+//   }
+//   button {
+//     background-color: #f9f9f9;
+//   }
+// }
