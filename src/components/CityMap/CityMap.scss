@@ -1,34 +1,13 @@
 @import '../../variables';
 
 // Styles pour le composant App
-
 .content {
   .c-col {
-    width: 24%;
-    height: calc(100% - $p);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    &.map {
-      width: 49%;
-      border-radius: $b-radius;
-      box-shadow: $shadow;
-    }
-    // Styles pour la carte Leaflet (si utilisée)
     .map-container {
       height: 100%;
-      .map {
-        width: 100%;
-        height: inherit;
-        border-radius: $b-radius; 
+      .leaflet-container {
+        border-radius: $b-radius;
       }
-    }
-
-    .c-item {
-      height: 48%;
-      background-color: $bg-color;
-      border-radius: $b-radius;
-      box-shadow: $shadow;
     }
   }
 }

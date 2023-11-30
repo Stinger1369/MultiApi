@@ -22,7 +22,7 @@ function UnsplashImages({ searchTerm }) {
   }, [searchTerm]);
 
   return (
-    <div className="image-gallery">
+    <div className="unsplash image-gallery">
       {images.map(image => (
         <img key={image.id} src={image.urls.small} alt={image.alt_description} />
       ))}

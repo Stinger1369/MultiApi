@@ -1,12 +1,19 @@
 @import './variables';
 
 .App {
+  height: 100%;
+  nav {
+    height: 3vh;
+  }
+  .weather {
+    height: 25vh;
+  }
   .content {
+    height: 45vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 350px;
     margin: 2em 0;
     padding: $p;
     background-image: url('./assets/images/sun.jpg');
@@ -14,5 +21,32 @@
     background-size: cover; // Assurer que l'image de fond couvre tout l'espace
     border-radius: $b-radius;
     box-shadow: $shadow;
+    
+    .c-col {
+      width: 24%;
+      height: calc(100% - $p);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &.map {
+        width: 49%;
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+      }
+      .c-item {
+        height: 48%;
+        background-color: $bg-color;
+        border-radius: $b-radius;
+        box-shadow: $shadow;
+      }
+    }
+  }
+  .unsplash {
+    height: 15vh;
+  }
+  .footer {
+    height: 5vh;
+    width: 100%;
+    background-color: aqua;
   }
 }

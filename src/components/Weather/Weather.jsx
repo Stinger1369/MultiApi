@@ -84,29 +84,32 @@ function Weather({ city }) {
 
   return (
     <div className="weather" style={{ backgroundImage: `url(${backgroundImage})` }}>
+
       <div className="firstBlock">
-      <div className="ville">      
-        <h1>{currentWeather.name}</h1>
-        <p>{currentWeather.sys.country}</p>
-        <p>{new Date(currentWeather.dt * 1000).toLocaleDateString()}</p>
-        <p>{new Date(currentWeather.dt * 1000).toLocaleTimeString()}</p>
-        <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
+        
+        <div className="ville">      
+          <h1>{currentWeather.name}</h1>
+          <p>{currentWeather.sys.country}</p>
+          <p>{new Date(currentWeather.dt * 1000).toLocaleDateString()}</p>
+          <p>{new Date(currentWeather.dt * 1000).toLocaleTimeString()}</p>
+          <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
+        </div>
+        <div className="temp">
+          <p>Température: {currentWeather.main.temp}°C</p>
+          <p>Température ressentie: {currentWeather.main.feels_like}°C</p>
+          <p>Température minimale: {currentWeather.main.temp_min}°C</p>
+          <p>Température maximale: {currentWeather.main.temp_max}°C</p>
+          <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
+        </div>
+        <div className="info">
+          <p>Conditions: {currentWeather.weather[0].description}</p>
+          <p>Humidité: {currentWeather.main.humidity}%</p>
+          <p>Pression: {currentWeather.main.pressure}hPa</p>
+          <p>Vitesse du vent: {currentWeather.wind.speed}km/h</p>
+          <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
+        </div>
       </div>
-      <div className="temp">
-        <p>Température: {currentWeather.main.temp}°C</p>
-        <p>Température ressentie: {currentWeather.main.feels_like}°C</p>
-        <p>Température minimale: {currentWeather.main.temp_min}°C</p>
-        <p>Température maximale: {currentWeather.main.temp_max}°C</p>
-        <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
-      </div>
-      <div className="info">
-        <p>Conditions: {currentWeather.weather[0].description}</p>
-        <p>Humidité: {currentWeather.main.humidity}%</p>
-        <p>Pression: {currentWeather.main.pressure}hPa</p>
-        <p>Vitesse du vent: {currentWeather.wind.speed}km/h</p>
-        <img src={getIconUrl(currentWeather.weather[0].icon)} alt="Weather icon" />
-      </div>
-      </div>
+
       <div className="weekly-forecast" style={{ color: textColor }}>
       {weeklyForecast.map((day, index) => (
         <div key={index} className="daily-forecast">
@@ -116,7 +119,8 @@ function Weather({ city }) {
           <p>Min: {day.temp.min}°C</p>
         </div>
       ))}
-    </div>
+      </div>
+
     </div>
   );
 }

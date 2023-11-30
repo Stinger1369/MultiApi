@@ -4,53 +4,54 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px;
-    margin: 20px 0;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    // margin: 0;
+    padding: $p;
+    border: $b;
+    border-radius: $b-radius;
+    background-color: $bg-color;
+    box-shadow: $shadow;
     text-align: center;
     background-size: cover; 
     background-position: center;
-}
-
-.weather h1 {
-    margin: 0;
-    color: #333;
-    font-size: 24px;
-}
-
-.weather p {
-    margin: 10px 0;
-   
-    font-size: 18px;
-}
-.ville, .temp, .info {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: rgba(249, 249, 249, 0.5); /* Semi-transparent */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin: 20px 0;
-    width: 25%;
-}
-.weather-icon {
-    width: 100px; /* Largeur de l'icône */
-    height: 100px; /* Hauteur de l'icône */
-  }
-.firstBlock {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-}
-.weekly-forecast {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
+    // height: 35vh;
+    .firstBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60%;
+        .ville, .temp, .info {
+            // font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: $b-radius;
+            background-color: $bg-color;
+            box-shadow: $shadow;
+            // padding: 0;
+            // margin: 20px 0;
+            width: 30%;
+            height: 100%;
+            overflow: hidden;
+            h1 {
+                margin: 0;
+                color: #333;
+                font-size: 24px;
+            }
+            p {
+                margin: 10px 0;
+               
+                font-size: 18px;
+            }
+            .weather-icon {
+                width: 100px; /* Largeur de l'icône */
+                height: 100px; /* Hauteur de l'icône */
+            }            
+        }
+    }
+    .weekly-forecast {
+        height: 35%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
