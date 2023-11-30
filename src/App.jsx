@@ -8,6 +8,8 @@ import Population from './components/Population/Population';
 import About from './pages/About/About'; 
 import Contact from './pages/Contact/Contact'; 
 import MarketStack from './components/MarketStack/MarketStack';
+import ExchangeRateStack from './components/ExchangeRateStack/ExchangeRateStack';
+import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter';
 import './App.scss';
 
 function App() {
@@ -30,13 +32,14 @@ function App() {
                   <>
                     <div className="c-col">
                       <Population title={`Population`} city={city} />
-                      <Population title={`Population`} city={city} />
+                      <CurrencyConverter /> title={`<CurrencyConverter />`} />
                     </div>
                     <div className="c-col map">
                       <CityMap city={city} />
                     </div>
                     <div className="c-col">
                       <MarketStack title={`MarketStack`}  />
+                      <ExchangeRateStack title={`ExchangeRateStack`}  />
                       
                     </div>  
                   </>
