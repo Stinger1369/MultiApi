@@ -1,14 +1,14 @@
 @import '../../variables';
 
 .population {
-  // border: 1px solid red;
-  padding: 0.5em;
-  color: #ffffff;
   font-family: $f-art;
-  .card {
+  .c-card {
     h3 {
       font-size: 1.5em;
-      margin-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+    p {
+      margin: 0.5em;
     }
   }
 }

@@ -12,6 +12,7 @@
     text-align: center;
     background-size: cover; 
     background-position: center;
+    line-height: 10px !important; /* Set line height to 24 pixels */
     .firstBlock {
         display: flex;
         justify-content: space-between;
@@ -31,7 +32,7 @@
                 font-size: 27px;
             }
             p {
-                margin: 10px 0;
+                margin: $p;
                 font-size: 18px;
                 &.hour {
                     font-style: italic;
@@ -62,7 +63,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: $p;
+        padding: 0 $p;
         border-radius: $b-radius;
         background-color: $bg-color;
         box-shadow: $shadow;

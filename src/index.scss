@@ -4,6 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // line-height: 20px !important; /* Set line height to 24 pixels */
+}
+p {
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -19,7 +24,6 @@ body {
   width: 100%;
   // max-height: 100%;
 }
-
 
 /* Styles for screens bigger than 600 pixels wide */
 @media screen and (min-width: $lg) {

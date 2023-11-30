@@ -1,33 +1,39 @@
 @import '../../variables';
 
-.navbar {
+nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: 0 $p !important;
   background-color: $bg-nav;
   box-shadow: $shadow;
   border-bottom-left-radius: $b-radius;
   border-bottom-right-radius: $b-radius;
-  margin-top: 5px;
+  .nav-logo {
+    font-family: $f-art;
+    font-size: 1.5em;
+    text-decoration: none !important;
+    color: rgb(20, 19, 19);
+    margin-left: $p;
+  }
 }
+
 .logo{
   display: flex;
   flex-direction: row;
 }
 .frame {
-  width: 38px; 
-  height: 38px; 
+  width: 35px; 
+  height: 35px; 
   border: 1px solid #ccc; 
   overflow: hidden; 
   border-radius: 50px;
 }
 .navbar img {
-  width: 38px; 
-  height: 38px; 
+  width: 35px; 
+  height: 35px;
   border-radius: 30px;
-  
 }
 .frame iframe {
   width: 100%; /* Remplir complètement la largeur de la div parente */
@@ -53,15 +59,22 @@
 .navbar .search {
   display: flex;
   align-items: center;
-  margin-left: 2em;
 }
 
 .navbar input[type="text"] {
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 5px $p;
   width: 200px;
-  margin-right: 10px;
+  margin: 0 1em 0 2em;
+  border-radius: $b-radius;
+  border: 1px solid rgb(255 255 255 / 49%);
+  background-color: rgb(111 175 175 / 79%);
+  &:focus {
+      outline: 1px solid rgba(255, 255, 255, 0.603);
+  }
+  &::placeholder {
+      color: rgba(240, 236, 236, 0.979);
+      font-style: italic;
+  }
 }
 
 .navbar button {

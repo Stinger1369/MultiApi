@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Contact.scss';
 
 function ContactForm() {

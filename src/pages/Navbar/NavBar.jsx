@@ -18,15 +18,20 @@ function NavBar({ onSearch }) {
   return (
     <nav className="navbar">
       <Link to="/"> 
-      <div className="logo"><div className='frame'>
-        <iframe
-          allow="fullscreen"
-          frameBorder="0"
-          src="https://giphy.com/embed/SgUUMhQXsgklZJynyN/video"
-          title="Giphy Video"
-        ></iframe>
+      <div className="logo">
+        {/* <div className='frame'>
+          <iframe
+            allow="fullscreen"
+            frameBorder="0"
+            src="https://giphy.com/embed/SgUUMhQXsgklZJynyN/video"
+            title="Giphy Video"
+          ></iframe>
+        </div> */}
+        <img src={Logo} alt="MultiAPI Logo" /> 
+        <div className="nav-logo">MultiAPI</div>
       </div>
-       <img src={Logo} alt="MultiAPI Logo" /> </div>
+
+      
       
       </Link>  <div className="nav">
         <Link to="/">Accueil</Link>

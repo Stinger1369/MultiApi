@@ -25,7 +25,7 @@ function Population({ title, city }) {
     return (
       <div className="c-item population">
         <div className="title">
-          <h2>{title}</h2>
+          {title}
         </div>
         
         <div className="c-card communes-list">
@@ -40,9 +40,6 @@ function Population({ title, city }) {
         </div>
       </div>
     );
-  }
+}
   
-  export default Population;
-  
-
-
+export default Population;

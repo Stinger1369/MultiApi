@@ -29,6 +29,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      font-size: 0.8em;
       
       &.map {
         width: 48%;
@@ -41,17 +42,17 @@
         width: 100%;
         padding: $p;
         color: $c-white;
-        background-color: $bg-color;
         border-radius: $b-radius;
         box-shadow: $shadow;
         background-image: url('./assets/images/sun.jpg');
         .title {
+          font-size: 1.7em;
           font-family: $f-art;
         }
         .c-card {
           padding: $p;
           margin-top: $p;
-          height: 72%;
+          height: 75%;
           font-size: 1.2em;
           background-color: rgb(159 197 197 / 41%);
           border-radius: $b-radius;

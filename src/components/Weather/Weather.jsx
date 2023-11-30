@@ -87,7 +87,6 @@ function Weather({ city }) {
 
       <div className="firstBlock">
         
-
         <div className="temp">
           <p className='temperature'>Température: {currentWeather.main.temp}°C</p>
           <p>T. Ressentie: {currentWeather.main.feels_like}°C</p>
