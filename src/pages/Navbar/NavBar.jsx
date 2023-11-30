@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/images/giphy.gif';
 
 import './NavBar.scss';
 
@@ -16,8 +17,18 @@ function NavBar({ onSearch }) {
 
   return (
     <nav className="navbar">
-      <div className="logo">MultiAPI</div>
-      <div className="nav">
+      <Link to="/"> 
+      <div className="logo"><div className='frame'>
+        <iframe
+          allow="fullscreen"
+          frameBorder="0"
+          src="https://giphy.com/embed/SgUUMhQXsgklZJynyN/video"
+          title="Giphy Video"
+        ></iframe>
+      </div>
+       <img src={Logo} alt="MultiAPI Logo" /> </div>
+      
+      </Link>  <div className="nav">
         <Link to="/">Accueil</Link>
         <Link to="/about">A propos</Link>
         <Link to="/contact">Contact</Link>

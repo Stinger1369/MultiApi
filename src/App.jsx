@@ -11,7 +11,6 @@ import Contact from './pages/Contact/Contact';
 import MarketStack from './components/MarketStack/MarketStack';
 import ExchangeRateStack from './components/ExchangeRateStack/ExchangeRateStack';
 import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter';
-import Footer from './pages/Footer/Footer';
 import './App.scss';
 
 function App() {

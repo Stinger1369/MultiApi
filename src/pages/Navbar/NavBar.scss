@@ -10,14 +10,28 @@
   box-shadow: $shadow;
   border-bottom-left-radius: $b-radius;
   border-bottom-right-radius: $b-radius;
+  margin-top: 5px;
 }
-
-.navbar .logo {
-  font-size: 20px;
-  font-weight: bold;
-  font-style: italic;
-  color: #333;
-  font-family: $f-art;
+.logo{
+  display: flex;
+  flex-direction: row;
+}
+.frame {
+  width: 38px; 
+  height: 38px; 
+  border: 1px solid #ccc; 
+  overflow: hidden; 
+  border-radius: 50px;
+}
+.navbar img {
+  width: 38px; 
+  height: 38px; 
+  border-radius: 30px;
+  
+}
+.frame iframe {
+  width: 100%; /* Remplir complètement la largeur de la div parente */
+  height: 100%; /* Remplir complètement la hauteur de la div parente */
 }
 
 .navbar .nav {
