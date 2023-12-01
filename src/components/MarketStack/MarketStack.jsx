@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './MarketStack.scss';
 import socket from '../../utils/WebSocket';
+import Spinner from '../Spinner/Spinner';
 
 function MarketStack() {
   const [stockData, setStockData] = useState(null);
@@ -37,8 +38,8 @@ function MarketStack() {
   if (!stockData) { return (
     <div className="c-item market-stack">
       <h2 className='title'>Loading Data</h2>
-      <div className="c-card">
-      <div>Chargement des données...</div>
+      <div className="c-card loading">
+        <Spinner />
       </div>
     </div>
   )} else {

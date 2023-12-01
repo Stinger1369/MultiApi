@@ -72,7 +72,7 @@
         overflow: hidden;
         .daily-forecast {
             height: 100%;
-            padding: 0.2em $p;
+            padding: 0.7em $p;
             border-radius: $b-radius;
             background-color: $bg-color;
             box-shadow: $shadow;
@@ -99,6 +99,9 @@
             }
             .daily-icon {
                 width: 3.5em;
+            }
+            .ranger {
+                font-size: 0.8rem;
             }
         }
     }
