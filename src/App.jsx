@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import NavBar from './pages/Navbar/NavBar';
 import Footer from './pages/Footer/Footer';
 import Weather from './components/Weather/Weather';
@@ -12,23 +14,23 @@ import MarketStack from './components/MarketStack/MarketStack';
 import ExchangeRateStack from './components/ExchangeRateStack/ExchangeRateStack';
 import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter';
 import ThemeContext from './contexts/ThemeContext';
+import ThemeControl from './components/ThemeControl/ThemeControl';
 
 import './App.scss';
 
 function App() {
   const [city, setCity] = useState('Paris');
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState( {color: 'light', light: '#e8f1f5ab', dark: '#080110d9'} )
 
   const handleSearch = async (term) => {
     setCity(term);
   };
 
-  console.warn(theme)
   return (
-    // Provider
-    <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
+    <ThemeContext.Provider value={{ ...theme, setTheme }}>
+    <ThemeControl />
     <Router>
-      <div className="App">
+      <div className="App" >
         <NavBar onSearch={handleSearch} />
         <Routes>
           <Route path="/" element={
@@ -39,15 +41,14 @@ function App() {
                   <>
                     <div className="c-col">
                       <Population title={`Population`} city={city} />
-                      <CurrencyConverter />
+                      {/* <CurrencyConverter /> */}
                     </div>
                     <div className="c-col map">
                       <CityMap city={city} />
                     </div>
                     <div className="c-col">
                       <MarketStack title={`MarketStack`}  />
-                      <ExchangeRateStack title={`ExchangeRateStack`}  />
-                      
+                      {/* <ExchangeRateStack title={`ExchangeRateStack`}  />          */}
                     </div>  
                   </>
                 )}

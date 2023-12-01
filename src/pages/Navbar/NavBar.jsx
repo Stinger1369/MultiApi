@@ -15,6 +15,7 @@ function NavBar({ onSearch }) {
     onSearch(searchTerm);
   };
 
+  // console.warn('render NavBar')
   return (
     <nav className="navbar">
       <div className="nav-l">

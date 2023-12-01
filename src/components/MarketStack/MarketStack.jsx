@@ -14,7 +14,7 @@ function MarketStack() {
       // Traitez les messages reçus ici
       if (json.type === 'trade' && json.data && json.data.length > 0) {
         const newStockData = json.data[0];
-        console.log('Nouvelles données de trade reçues :', newStockData);
+        // console.log('Nouvelles données de trade reçues :', newStockData);
   
         // Mettez à jour l'état avec les nouvelles données
         setStockData(newStockData);
