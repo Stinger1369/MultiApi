@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Spinner from '../Spinner/Spinner';
 import './Weather.scss';
 import Rain from '../../assets/images/rain.jpg';
 import Sun from '../../assets/images/sun.jpg';
 import Snow from '../../assets/images/snow.jpg';
 import Wind from '../../assets/images/wind.jpg';
 import Nuages from '../../assets/images/wind.jpg';
+import Mist from '../../assets/images/mist.jpg';
 
 
 function Weather({ city }) {
@@ -57,6 +59,9 @@ function Weather({ city }) {
           case 'Snow':
             setBackgroundImage(Snow);
             break;
+          case 'Mist':
+            setBackgroundImage(Mist);
+            break;
           default:
             setBackgroundImage('');
             break;
@@ -75,7 +80,7 @@ function Weather({ city }) {
   }, [city]);
 
   if (error) return <div>Erreur : {error}</div>;
-  if (!currentWeather || !weeklyForecast) return <div>Chargement...</div>;
+  if (!currentWeather || !weeklyForecast) return <div className='loading'><Spinner /></div>;
 
   // Fonction pour obtenir le chemin de l'icône en fonction du code météo
   const getIconUrl = (iconCode) => `http://openweathermap.org/img/wn/${iconCode}.png`;
