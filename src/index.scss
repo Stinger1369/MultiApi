@@ -24,7 +24,7 @@ body {
 }
 
 /* Styles for screens bigger FullHd 1080P */
-@media screen and (min-width: $lg) and (max-width: 1920px)  {
+@media screen and (min-width: $lg) and (max-width: xl)  {
   body {
     font-size: 0.7em !important;
     // line-height: 0.8em !important;
@@ -39,7 +39,7 @@ body {
   }
 }
 
-@media screen and (min-width: $xl) {
+@media screen and (min-width: 1921px) {
   body {
     #root {
       width: 1200px;

@@ -11,16 +11,22 @@ import Contact from './pages/Contact/Contact';
 import MarketStack from './components/MarketStack/MarketStack';
 import ExchangeRateStack from './components/ExchangeRateStack/ExchangeRateStack';
 import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter';
+import ThemeContext from './contexts/ThemeContext';
+
 import './App.scss';
 
 function App() {
   const [city, setCity] = useState('Paris');
+  const [theme, setTheme] = useState('light')
 
   const handleSearch = async (term) => {
     setCity(term);
   };
 
+  console.warn(theme)
   return (
+    // Provider
+    <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
     <Router>
       <div className="App">
         <NavBar onSearch={handleSearch} />
@@ -55,6 +61,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </ThemeContext.Provider>
   );
 }
 
