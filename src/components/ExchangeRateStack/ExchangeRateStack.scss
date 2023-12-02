@@ -2,6 +2,7 @@
 
 .exchange-component {
     .exchange-list {
+        min-height: 130px;
         max-height: 130px; // Hauteur fixe pour afficher seulement 4 éléments
         overflow-y: hidden; // Activer le défilement vertical
         list-style: none;

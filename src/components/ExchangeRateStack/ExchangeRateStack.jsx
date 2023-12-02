@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ExchangeRateStack.scss';
+import Spinner from '../Spinner/Spinner';
 
 const ExchangeComponent = () => {
     const [exchangeData, setExchangeData] = useState(null);
@@ -26,22 +27,23 @@ const ExchangeComponent = () => {
 
     return (
         <div className="c-item exchange-component">
-        {exchangeData ? (
             <div>
-                {/* <p>Taux de change pour : {exchangeData.base_code}</p> */}
-                {/* <p>Date : {exchangeData.time_last_update_utc}</p> */}
                 <div>
                     <div className='title'>Taux de change</div>
-                    <ul className="c-card exchange-list">
+                    {exchangeData ? (
+                        <ul className="c-card exchange-list">
                         {Object.entries(exchangeData.conversion_rates).map(([currency, rate]) => (
                             <li key={currency}>{currency} : {rate}</li>
                         ))}
-                    </ul>
+                        </ul>
+                    ) : (
+                        <ul className="c-card exchange-list loading">
+                            <Spinner />
+                        </ul>
+                    )}
+                    
                 </div>
             </div>
-        ) : (
-            <p>Chargement des données...</p>
-        )}
     </div>
     
     );

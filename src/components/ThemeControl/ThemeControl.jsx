@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 import ThemeContext from '../../contexts/ThemeContext';
+// import { useTheme } from '../../contexts/ThemeContext';
 import './ThemeControl.scss';
 
 export default function ThemeControl() {
     const { color, light, dark, setTheme } = useContext(ThemeContext)
+    // const { theme, toggleTheme } = useTheme()
 
     function handleSetTheme() {
         const body = document.body;
@@ -18,6 +20,7 @@ export default function ThemeControl() {
 
     return <>
         <button className='btn theme-control'
+                // onClick={toggleTheme}
                 onClick={handleSetTheme}
         >
             { 

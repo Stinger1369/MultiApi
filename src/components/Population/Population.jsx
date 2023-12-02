@@ -12,6 +12,7 @@ function Population({ title, city }) {
           // Filtrer les données pour ne garder que celles correspondant exactement à la ville recherchée
           const filteredData = data.filter(commune => commune.nom.toLowerCase() === city.toLowerCase());
           setCommunes(filteredData);
+          // console.log(filteredData);
         } catch (error) {
           console.error('Erreur lors de la récupération des communes:', error);
         }

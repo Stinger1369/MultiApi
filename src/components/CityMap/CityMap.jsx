@@ -16,6 +16,8 @@ function CityMap({ city }) {
         if (!response.ok) throw new Error('Erreur lors de la récupération des coordonnées');
         const data = await response.json();
         setCoords({ lat: data.coord.lat, lng: data.coord.lon });
+        console.log(data)
+        console.log(data.coord)
       } catch (error) {
         console.error('Erreur :', error);
       }

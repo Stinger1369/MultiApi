@@ -15,3 +15,10 @@
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
 }
+
+.loading {
+    // width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -17,13 +17,13 @@ socket.addEventListener('message', (event) => {
 
   if (json.type === 'trade' && json.data && json.data.length > 0) {
     const stockData = json.data[0];
-    console.log('Nouvelles données de trade reçues :', stockData);
+    // console.log('Nouvelles données de trade reçues :', stockData);
   } else if (json.s === 'FX:EURUSD') {
     const exchangeRateData = {
       symbol: json.s,
       rate: json.p,
     };
-    console.log('Nouvelles données de taux de change reçues :', exchangeRateData);
+    // console.log('Nouvelles données de taux de change reçues :', exchangeRateData);
   }
 });
 
