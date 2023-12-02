@@ -47,9 +47,9 @@ function App() {
                         <CityMap city={city} />
                       </div>
                       <div className="c-col">
-                        {/* <MarketStack title={`MarketStack`}  /> */}
-                        {/* <Population title={`Population`} city={city} /> */}
-                        {/* <ExchangeRateStack title={`ExchangeRateStack`}  />          */}
+                        <MarketStack title={`MarketStack`}  />
+                        {/* <ExchangeRateStack title={`ExchangeRateStack`}  />    */}
+                        {/* <Population title={`Population`} city={city} /> */}      
                       </div>  
                     </>
                   )}

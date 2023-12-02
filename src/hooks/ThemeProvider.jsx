@@ -8,9 +8,7 @@ import ThemeContext from "../contexts/ThemeContext";
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState( {color: 'light', light: '#e8f1f5ab', dark: '#080110d9'} ) 
     // console.log('Provider: ' + theme.color)
-
     const { color, light, dark } = theme;
-    console.log('Provider: ' + color)
 
     const toggleTheme = () => {
         const body = document.body;

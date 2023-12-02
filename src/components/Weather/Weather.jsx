@@ -85,7 +85,6 @@ function Weather({ city }) {
   // Fonction pour obtenir le chemin de l'icône en fonction du code météo
   const getIconUrl = (iconCode) => `http://openweathermap.org/img/wn/${iconCode}.png`;
   const textColor = currentWeather ? weatherToColor[currentWeather.weather[0].main] : '#000000';
-  console.log(textColor);
 
   return (
     <div className="weather" style={{ backgroundImage: `url(${backgroundImage})` }}>

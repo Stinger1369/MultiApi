@@ -5,7 +5,7 @@ import './ThemeControl.scss';
 export default function ThemeControl() {
     const { theme, toggleTheme } = useTheme()
     // const { color, light, dark, toggleTheme } = useTheme()
-    // console.log('Nav: ' + color)
+    // console.log('ThemeControl: ' + color)
 
     return <>
         <button className='btn theme-control'

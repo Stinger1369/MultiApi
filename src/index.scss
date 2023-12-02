@@ -27,8 +27,6 @@ body {
 @media screen and (min-width: $lg) and (max-width: xl)  {
   body {
     font-size: 0.7em !important;
-    // line-height: 0.8em !important;
-    // background-color: aqua;
     #root {
       width: $w;
       margin: 0 auto;
@@ -50,17 +48,3 @@ body {
     }
   }
 }
-
-
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     color: #213547;
-//     background-color: #ffffff;
-//   }
-//   a:hover {
-//     color: #747bff;
-//   }
-//   button {
-//     background-color: #f9f9f9;
-//   }
-// }
