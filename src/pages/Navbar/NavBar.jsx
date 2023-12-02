@@ -13,8 +13,16 @@ function NavBar({ onSearch }) {
 
   const handleSearch = () => {
     onSearch(searchTerm);
+    setSearchTerm('')
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(searchTerm);
+      setSearchTerm('')
+    }
+  };
+  
   return (
     <nav className="navbar">
       <div className="nav-l">
@@ -47,6 +55,7 @@ function NavBar({ onSearch }) {
               placeholder="Rechercher une ville..."
               value={searchTerm}
               onChange={handleSearchChange}
+              onKeyDown={handleKeyPress}
             />
             <button onClick={handleSearch}>Recherche</button>
           </div>
