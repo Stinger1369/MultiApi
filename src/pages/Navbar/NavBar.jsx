@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/giphy.gif';
-
 import './NavBar.scss';
+import ThemeControl from '../../components/ThemeControl/ThemeControl';
 
 function NavBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,7 +15,6 @@ function NavBar({ onSearch }) {
     onSearch(searchTerm);
   };
 
-  // console.warn('render NavBar')
   return (
     <nav className="navbar">
       <div className="nav-l">
@@ -33,6 +32,7 @@ function NavBar({ onSearch }) {
           </div>
         </Link>  
         <div className="nav-logo">MultiAPI</div>
+        <ThemeControl />
       </div>
 
       <div className="nav-r">

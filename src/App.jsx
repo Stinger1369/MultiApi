@@ -14,25 +14,22 @@ import MarketStack from './components/MarketStack/MarketStack';
 import ExchangeRateStack from './components/ExchangeRateStack/ExchangeRateStack';
 import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter';
 import ThemeContext from './contexts/ThemeContext';
-// import { ThemeProvider } from './contexts/ThemeContext';
+import { ThemeProvider } from './hooks/ThemeProvider';
 import ThemeControl from './components/ThemeControl/ThemeControl';
-
 import './App.scss';
 
 function App() {
   const [city, setCity] = useState('Paris');
-  const [theme, setTheme] = useState( {color: 'light', light: '#e8f1f5ab', dark: '#080110d9'} )
-
+  
   const handleSearch = async (term) => {
     setCity(term);
   };
 
   return (
-    <ThemeContext.Provider value={{ ...theme, setTheme }}>
-    {/* <ThemeProvider> */}
+    <div className="App" >
+    <ThemeProvider>
       <ThemeControl />
       <Router>
-        <div className="App" >
           <NavBar onSearch={handleSearch} />
           <Routes>
             <Route path="/" element={
@@ -64,10 +61,9 @@ function App() {
           </Routes>
           <UnsplashImages searchTerm={city} />
           <Footer />
-        </div>
       </Router>
-    {/* </ThemeProvider> */}
-    </ThemeContext.Provider>
+    </ThemeProvider>
+    </div>
   );
 }
 
